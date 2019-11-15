@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 */
-
+/*
         instaRecyclerView = findViewById(R.id.twitterFeedRV);
        // tweetsList = new ArrayList<>();
         //adapter = new RecyclerAdapter(this, (ArrayList<Tweet>) tweetsList);
@@ -103,13 +103,17 @@ public class HomeActivity extends AppCompatActivity {
                 showEditDialog();
             }
         });
-
+*/
     }
 
+
+/*
     private void showEditDialog() {
         FragmentManager fm = getSupportFragmentManager();
         TweetDialogFragment editNameDialogFragment = TweetDialogFragment.newInstance("Tweet something");
         editNameDialogFragment.show(fm, "tweet_dialog_fragment");
         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
+    */
+
 }

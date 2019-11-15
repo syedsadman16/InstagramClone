@@ -16,7 +16,7 @@
 
     <color name="ActionBarColor">#110022</color>
     <color name="background">#000033</color>
-    <color name="ActionBarTitle">#0963a3</color>
+    <color name="ActionBarTitle">#0963A3</color>
     <color name="ButtonColor">#1ba1e2</color>
 
     <style name="counterText">

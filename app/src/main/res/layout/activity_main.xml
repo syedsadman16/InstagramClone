@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/nav_logo_whiteout" />
 
     <EditText
-        android:id="@+id/usernameTextField"
+        android:id="@+id/usernameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
@@ -50,7 +50,7 @@
         android:inputType="text|textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTextField" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameField" />
 
     <Button
         android:id="@+id/signInButton"
@@ -62,14 +62,14 @@
         android:layout_marginEnd="127dp"
         android:layout_marginRight="127dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/signUpText"
+        app:layout_constraintBottom_toTopOf="@+id/registerText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordField"
         app:layout_constraintVertical_bias="0.01" />
 
     <TextView
-        android:id="@+id/signUpText"
+        android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="78dp"
