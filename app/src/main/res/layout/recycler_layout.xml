@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:visibility="visible">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            tools:srcCompat="@drawable/instagram_user_outline_24"
+            tools:visibility="visible"></ImageView>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="username"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#000000"></TextView>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        tools:srcCompat="@drawable/instagram_user_filled_24"
+        tools:visibility="visible"></ImageView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/commentImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ivMedia"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ufi_heart"
+            android:tint="#EAEEF1" />
+
+        <ImageView
+            android:id="@+id/reImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ivMedia"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ufi_comment"
+            android:tint="#EAEEF1" />
+
+        <ImageView
+            android:id="@+id/reImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ivMedia"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ufi_new_direct"
+            android:tint="#EAEEF1" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tweet_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:text="Username This is a new picture"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#000000" />
+
+</LinearLayout>
