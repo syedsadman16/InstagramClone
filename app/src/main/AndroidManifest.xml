@@ -2,34 +2,42 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.syedsadman16.instagramclone"
     android:versionCode="1"
-    android:versionName="1.0" >
-
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".ParseApplication"
+        android:name=".Networking.ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.HomeActivity"></activity>
-        <activity android:name=".Activities.PhotoActivity"></activity>
 
-        <activity android:name=".Activities.RegisterActivity">
+        <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.codepath.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
 
-        </activity>
-
+        <activity android:name=".Activities.UserActivity"></activity>
+        <activity android:name=".Activities.HomeActivity" />
+        <activity android:name=".Activities.PhotoActivity" />
+        <activity android:name=".Activities.RegisterActivity"></activity>
         <activity android:name=".Activities.SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package com.syedsadman16.instagramclone.Adapters;
 /*
-
 import android.content.Context;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -11,9 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.Models.Tweet;
+import com.syedsadman16.instagramclone.Models.Post;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,7 +23,7 @@ public class RecyclerAdapter extends
         RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     Context mContext;
-    ArrayList<Tweet> tweets;
+    ArrayList<Post> feed;
 
     public RecyclerAdapter(Context ctx, ArrayList<Tweet> t){
         this.tweets = t;

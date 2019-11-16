@@ -39,7 +39,7 @@
 
 
     <ImageView
-        android:id="@+id/profileImage"
+        android:id="@+id/feedImage"
         android:layout_width="match_parent"
         android:layout_height="380dp"
         android:layout_marginLeft="20dp"
@@ -58,7 +58,7 @@
         android:visibility="visible">
 
         <ImageView
-            android:id="@+id/commentImage"
+            android:id="@+id/likeLogo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_below="@+id/ivMedia"
@@ -70,7 +70,7 @@
             android:tint="#EAEEF1" />
 
         <ImageView
-            android:id="@+id/reImage"
+            android:id="@+id/directLogo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_below="@+id/ivMedia"
@@ -81,7 +81,7 @@
             android:tint="#EAEEF1" />
 
         <ImageView
-            android:id="@+id/reImage"
+            android:id="@+id/directLogo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_below="@+id/ivMedia"
@@ -94,7 +94,7 @@
 
 
     <TextView
-        android:id="@+id/tweet_body"
+        android:id="@+id/captionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="all"

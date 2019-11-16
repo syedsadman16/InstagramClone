@@ -6,29 +6,37 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+import com.syedsadman16.instagramclone.Models.Post;
 import com.syedsadman16.instagramclone.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
     //RecyclerAdapter adapter;
-    //List<InstaFeed> instafeedList;
+    //List<Post> instafeedList;
     RecyclerView instaRecyclerView;
     //SwipeRefreshLayout swipeRefreshLayout;
-    public static String TAG = "HomeActivity";
+    Button homeButton, pictureButton, userButton;
 
 
     @Override
@@ -36,10 +44,45 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         ActionBar actionBar = getSupportActionBar(); // or getActionBar();
         getSupportActionBar().setTitle("Instagram");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#110011")));
+
+
+        homeButton = findViewById(R.id.homeButton);
+        pictureButton = findViewById(R.id.pictureButton);
+        userButton = findViewById(R.id.userButton);
+
+        pictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, PhotoActivity.class));
+            }
+        });
+        userButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, UserActivity.class));
+            }
+        });
+
+
+        ParseQuery<Post> query = new ParseQuery<Post>(Post.class);
+        query.include("author");
+        query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> objects, ParseException e) {
+                if(e != null){
+                    e.printStackTrace();
+                    return; //return so it doesn't execute for loop
+                }
+                for(int i=0; i<objects.size(); i++){
+                    Post post =  objects.get(i);
+                    Log.d("Post", "Post: " + post.getDescription()+ ",Username: " + post.getUser().getUsername());
+                }
+            }
+        });
+
 
 
         //pull to refresh

@@ -32,6 +32,12 @@ public class SignIn extends AppCompatActivity {
         signIn = findViewById(R.id.signInButton);
         registerText = findViewById(R.id.registerText);
 
+        //Before anything, if user is already signed in, skip login page
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            startActivity(new Intent(this, HomeActivity.class));
+        }
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

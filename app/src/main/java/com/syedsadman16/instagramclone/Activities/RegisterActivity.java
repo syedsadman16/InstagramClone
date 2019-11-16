@@ -39,6 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = passwordField.getText().toString();
                 String email = emailField.getText().toString();
                 register(username,password,email);
+                startActivity(new Intent(RegisterActivity.this, SignIn.class));
+            }
+        });
+
+        signInText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, SignIn.class));
             }
         });
 
