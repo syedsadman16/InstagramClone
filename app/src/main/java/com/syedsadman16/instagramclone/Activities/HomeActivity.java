@@ -1,7 +1,9 @@
 package com.syedsadman16.instagramclone.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,15 +13,20 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.syedsadman16.instagramclone.Fragments.HomeFragment;
+import com.syedsadman16.instagramclone.Fragments.PhotoFragment;
+import com.syedsadman16.instagramclone.Fragments.UserFragment;
 import com.syedsadman16.instagramclone.Models.Post;
 import com.syedsadman16.instagramclone.R;
 
@@ -48,24 +55,37 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Instagram");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#110011")));
 
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
-        homeButton = findViewById(R.id.homeButton);
-        pictureButton = findViewById(R.id.pictureButton);
-        userButton = findViewById(R.id.userButton);
+        final FragmentManager fragmentManager = getSupportFragmentManager();
 
-        pictureButton.setOnClickListener(new View.OnClickListener() {
+        // define your fragments here
+        final Fragment fragment1 = new HomeFragment();
+        final Fragment fragment2 = new PhotoFragment();
+        final Fragment fragment3 = new UserFragment();
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, PhotoActivity.class));
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment;
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                        fragment = fragment1;
+                        break;
+                    case R.id.action_capture:
+                        fragment = fragment2;
+                        break;
+                    case R.id.action_profile:
+                        fragment = fragment3;
+                        break;
+                    default: return true;
+                }
+                fragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit();
+                return true;
             }
         });
-        userButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, UserActivity.class));
-            }
-        });
-
+        // Set default selection to be launched
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
 
         ParseQuery<Post> query = new ParseQuery<Post>(Post.class);
         query.include("author");
