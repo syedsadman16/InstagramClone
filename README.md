@@ -1,4 +1,4 @@
-# Project 3 - *InstagramClone PART 1*
+# Project 3 - *InstagramClone*
 
 **InstagramClone** is a photo sharing app similar to Instagram but using Parse as its backend.
 
