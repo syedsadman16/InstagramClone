@@ -31,7 +31,7 @@ The following functionality is completed:
 
 Part 2 - Adding posts to feed:
 
-<img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='demo2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Part 1 - Login/SignUp with Parse:
 
