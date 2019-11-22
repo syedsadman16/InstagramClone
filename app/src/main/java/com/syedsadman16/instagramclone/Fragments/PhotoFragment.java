@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
@@ -72,6 +73,7 @@ public class PhotoFragment extends Fragment {
                 }
                 savePost(desc,user, photoFile);
                 startActivity(new Intent(getContext(), HomeActivity.class));
+                HomeFragment.adapter.notifyDataSetChanged();
             }
         });
 

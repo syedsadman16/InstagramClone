@@ -15,12 +15,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/profileImage"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             tools:srcCompat="@drawable/instagram_user_outline_24"
@@ -31,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:padding="5dp"
             android:text="username"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#000000"></TextView>
@@ -41,26 +43,27 @@
     <ImageView
         android:id="@+id/feedImage"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:maxHeight="400dp"
+        android:adjustViewBounds="true"
         android:layout_marginRight="10dp"
-        tools:srcCompat="@drawable/instagram_user_filled_24"
+        tools:srcCompat="@tools:sample/avatars"
         tools:visibility="visible"></ImageView>
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:orientation="horizontal"
-        android:paddingRight="10dp"
         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:visibility="visible">
 
         <ImageView
             android:id="@+id/likeLogo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/ivMedia"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
@@ -71,8 +74,8 @@
 
         <ImageView
             android:id="@+id/directLogo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/ivMedia"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
@@ -98,6 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="all"
+        android:paddingLeft="10dp"
         android:text="Username This is a new picture"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#000000" />

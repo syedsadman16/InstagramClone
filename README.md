@@ -4,31 +4,46 @@
 
 ## User Stories
 
-The following **required** functionality is completed:
+The following functionality is completed:
 
 - [X] User can sign up to create a new account using Parse authentication.
 - [X] User can log in and log out of his or her account.
 - [X] The current signed in user is persisted across app restarts.
 - [X] User can take a photo, add a caption, and post it to "Instagram".
-
-The following **optional** features are implemented:
-
 - [X] User sees app icon in home screen and styled bottom navigation view
-- [ ] Style the feed to look like the real Instagram feed.
+- [X] User can view the last 20 posts submitted to "Instagram".
+- [X] User can pull to refresh the last 20 posts submitted to "Instagram".
+- [X] The user should switch between different tabs - viewing all posts (feed view), capture (camera and photo gallery view) and profile tabs (posts made) using fragments and a Bottom Navigation View. 
+- [X] Style the feed to look like the real Instagram feed.
+- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
+- [ ] Show the username and creation time for each post.
+- [ ] User can tap a post to view post details, including timestamp and caption.
+- [ ] User Profiles
+      - [ ] Allow the logged in user to add a profile photo
+      - [ ] Display the profile photo with each post
+- [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts
+- [ ] User can comment on a post and see all comments for each post in the post details screen.
+- [ ] User can like a post and see number of likes for each post in the post details screen.
 - [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
 
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Part 2 - Adding posts to feed:
+
+<img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Part 1 - Login/SignUp with Parse:
 
 <img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-- Could not implement all optional features because of hectic schedule
-- Will impelement all features in Part 2
+- Learned how to create custom API calls and query data from server
+- Implemented RecylerView and LinearLayout
+- Utilized fragments and bottom navigation bar
+- Used Views, Viewgroups and Layouts
 
 
 ## Open-source libraries used
